@@ -215,7 +215,7 @@ flatten_ml_fit_problem <- function(fitting_problem,
 
   message("Computing reverse weights map")
   reverse_weights_transform <- ((1 / prior_weights_agg) * t(prior_weights * gid_lookup$n * weights_transform))
-  stopifnot(all.equal(diag(reverse_weights_transform %*% weights_transform), rep(1, ncol(weights_transform))))
+  #stopifnot(all.equal(diag(reverse_weights_transform %*% weights_transform), rep(1, ncol(weights_transform))))
 
   message("Normalizing weights")
   prior_weights_agg <- prior_weights_agg / sum(prior_weights_agg) *
