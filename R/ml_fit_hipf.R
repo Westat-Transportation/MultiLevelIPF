@@ -164,10 +164,10 @@ run_hipf <- function(flat, flat_group, flat_ind, group_ind_totals, tol, diff_tol
       break
     }
 
-    if (tol_reached(last_group_weights, group_weights, diff_tol)) {
-      message("Weights haven't changed in iteration ", iter, ", exiting.")
-      break
-    }
+    #if (tol_reached(last_group_weights, group_weights, diff_tol)) {
+    #  message("Weights haven't changed in iteration ", iter, ", exiting.")
+    #  break
+    #}
   }
 
   residuals <- group_weights %*% group_ref_sample - group_target_values

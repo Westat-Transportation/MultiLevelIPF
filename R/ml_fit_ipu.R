@@ -73,10 +73,10 @@ run_ipu <- function(flat, tol, diff_tol, maxiter, verbose) {
       break
     }
 
-    if (tol_reached(last_weights, weights, diff_tol)) {
-      message("Weights haven't changed in iteration ", iter, ", exiting.")
-      break
-    }
+    #if (tol_reached(last_weights, weights, diff_tol)) {
+    #  message("Weights haven't changed in iteration ", iter, ", exiting.")
+    #  break
+    #}
   }
 
   tibble::lst(
