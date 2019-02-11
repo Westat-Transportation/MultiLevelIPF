@@ -68,8 +68,8 @@ create_flat_ind <- function(fitting_problem, verbose) {
 
   flat_ind <- as.flat_ml_fit_problem(fitting_problem_ind, model_matrix_type = "separate", verbose = verbose)
 
-  stopifnot(nrow(flat_ind$ref_sample) == nrow(fitting_problem$refSample))
-  stopifnot(all(flat_ind$ref_sample@x %in% 0:1))
+  #stopifnot(nrow(flat_ind$ref_sample) == nrow(fitting_problem$refSample))
+  #stopifnot(all(flat_ind$ref_sample@x %in% 0:1))
 
   flat_ind
 }
@@ -88,9 +88,9 @@ create_flat_group <- function(fitting_problem, verbose) {
 
   flat_group <- as.flat_ml_fit_problem(fitting_problem_group, model_matrix_type = "separate", verbose = verbose)
 
-  stopifnot(nrow(flat_group$ref_sample) ==
-    sum(!duplicated(fitting_problem$refSample[[fitting_problem$fieldNames$groupId]])))
-  stopifnot(all(flat_group$ref_sample@x %in% 0:1))
+  #stopifnot(nrow(flat_group$ref_sample) ==
+  #  sum(!duplicated(fitting_problem$refSample[[fitting_problem$fieldNames$groupId]])))
+  #stopifnot(all(flat_group$ref_sample@x %in% 0:1))
 
   flat_group
 }
@@ -211,8 +211,8 @@ rescale_group_weights_for_ind_per_group <- function(
     tcrossprod(fhprime_by_fh, weights_transform_group_to_groupsize)
   )
 
-  stopifnot(abs(sum(group_weights) / group_ind_totals$group - 1) < 1e-6)
-  stopifnot(abs(sum(as.vector(group_weights %*% weights_transform_group_to_groupsize) * seq_along(Fp)) / group_ind_totals$ind - 1) < 1e-6)
+  #stopifnot(abs(sum(group_weights) / group_ind_totals$group - 1) < 1e-6)
+  #stopifnot(abs(sum(as.vector(group_weights %*% weights_transform_group_to_groupsize) * seq_along(Fp)) / group_ind_totals$ind - 1) < 1e-6)
 
   group_weights
 }
